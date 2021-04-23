@@ -2,7 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
-export default function Header() {
+import SideNavigation from './sideNav/sideNav'
+export default function Header(props) {
     const logo = () =>{
         return(
             <div className = "logo-box">
@@ -14,11 +15,17 @@ export default function Header() {
     }
     const navbars = () =>{
         return(
-            <FontAwesomeIcon icon = {faBars} className = "text-white text-left" />
+            <FontAwesomeIcon
+             icon = {faBars} 
+             className = "text-white text-left"
+             onClick = {props.onOpenNav}
+
+            />
         )
     }
     return (
         <header className = "header">
+            <SideNavigation {...props} />
             <div className = "container">
                 <div className = "row">
                     <div className = "col">
