@@ -61,3 +61,17 @@ code {
   background-position: center;
   background-repeat: no-repeat;
 }
+.newsList-item{
+    border: 1px solid #f2f2f2;
+    background: #fff;
+    padding: 8px 5px 0 5px;
+}
+.newsList-item h2{
+  font-size: 12px;
+  line-height: 21px;
+  margin: 5px 0;
+  color: #525252;
+}
+.newsList-item h2 a{
+  text-decoration: none;
+}

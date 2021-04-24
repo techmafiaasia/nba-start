@@ -18,6 +18,7 @@
     "react-scripts": "4.0.3",
     "react-simple-sidenav": "^2.0.0",
     "react-slick": "^0.28.1",
+    "react-transition-group": "^4.4.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
