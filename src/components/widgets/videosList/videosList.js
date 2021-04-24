@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {URL} from '../../../config'
 import Button from '../buttons/button'
+import CardInfo from '../cardInfo/cardInfo'
 
 export default class VideosList extends Component {
     state = {
@@ -70,6 +71,7 @@ export default class VideosList extends Component {
                                     <div ></div>
                                 </div>
                                 <div className = "right">
+                                    {/* <CardInfo teams = {item.team} date = {item.date} /> */}
                                     <h2>{item.title}</h2>
                                 </div>
                             </div>
