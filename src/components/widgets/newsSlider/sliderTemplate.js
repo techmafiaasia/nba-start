@@ -8,6 +8,7 @@ export default function SliderTemplate(props) {
         infinite: true,
         arrows:false,
         speed: 300,
+        ...props.settings
     }
     let template = ''
 
