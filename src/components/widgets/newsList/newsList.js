@@ -35,7 +35,6 @@ export default class NewsList extends Component {
     }
 
     loadMore = () =>{
-        console.log('this function works')
         let end = this.state.end + this.state.amount
         this.request(this.state.end, end)
     }
@@ -70,7 +69,6 @@ export default class NewsList extends Component {
         return template
     }
     render() {
-        console.log( 'teams',this.state.teams)
         return (
          
                   <div>
