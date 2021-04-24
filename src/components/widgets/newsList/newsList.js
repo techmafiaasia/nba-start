@@ -3,7 +3,7 @@ import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {URL} from '../../../config'
-
+import Button from './../buttons/button'
 export default class NewsList extends Component {
     state = {
         items: [],
@@ -36,11 +36,20 @@ export default class NewsList extends Component {
             case 'card':
                 template = this.state.items.map((item,i) =>{
                     return(
+                        <CSSTransition
+                        key = {i}
+                        classNames = {{
+                            enter: 'newsList-wrapper',
+                            enterActive: 'newsList-wrapper_enter'
+                        }}
+                        timeout = {500} 
+                        >
                      <div key = {i} className = "newsList-item">
                          <Link to = {`articles/${item.id}`}>
                              <h2>{item.title}</h2>
                          </Link>
                      </div>
+                     </CSSTransition>
                     )
                 })
                 break
@@ -52,12 +61,22 @@ export default class NewsList extends Component {
     render() {
         console.log( 'cardtemplatenow',this.state.items)
         return (
-            <div>
-               {this.renderNews(this.props.type)}
-                <div onClick = {this.loadMore}>
-                    click
+         
+                  <div>
+                <TransitionGroup
+                    component = "div"
+                    className = "list"
+                >
+                    {this.renderNews(this.props.type)}
+                    <Button 
+                        type = "loadmore"
+                        loadmore = {this.loadMore}
+                        cta = "Load More News"
+                    />
+                </TransitionGroup>
+               
                 </div>
-            </div>
+           
         )
     }
 }

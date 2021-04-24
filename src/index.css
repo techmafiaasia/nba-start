@@ -75,3 +75,23 @@ code {
 .newsList-item h2 a{
   text-decoration: none;
 }
+.newsList-wrapper{
+  box-sizing: border-box;
+  opacity: 0;
+  transform:translateX(-100%);
+  transition: all .5s ease;
+}
+.newsList-wrapper_enter{
+  opacity: 1;
+  transform: translateX(0)
+}
+.blue-btn{
+  text-align: center;
+  background: #2195f3;
+  border-bottom: 1px solid #d7d7d7;
+  font-weight: 500;
+  color: #eee;
+  padding: 9px;
+  cursor: pointer;
+  font-size: 15px;
+}
