@@ -43,3 +43,21 @@ code {
   color: #878787;
   font-size: 14px;
 }
+.featured-item{
+  position: relative;
+}
+.featured-item a{
+  position: absolute;
+  bottom: 20%;
+  width: 80%;
+  right: 0;
+  color: #fff;
+  font-weight: 300;
+  font-size: 24px;
+}
+.featured-image{
+  height: 330px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
