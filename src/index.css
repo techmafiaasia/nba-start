@@ -111,3 +111,10 @@ code {
 .date{
   color: #2196f3;
 }
+.videos-list-wrapper{
+  text-align: center;
+  margin: 20px 0;
+  color: #353535;
+  font-weight: 300;
+  font-size: 21px;
+}

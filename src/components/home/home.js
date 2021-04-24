@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from '../widgets/newsSlider/slider'
 import NewsList from '../widgets/newsList/newsList'
+import VideosList from '../widgets/videosList/videosList'
 export default function Home() {
     return (
         <div>
@@ -17,6 +18,15 @@ export default function Home() {
                 loadMore = {true}
                 start = {0}
                 amount = {3}
+            />
+            <VideosList 
+                type = "card"
+                loadMore = {true}
+                title = {true}
+                loadMore = {false}
+                start = {0}
+                amount = {3}
+
             />
 
         </div>

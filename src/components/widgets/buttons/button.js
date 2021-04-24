@@ -12,6 +12,13 @@ export default function Button(props) {
                             {props.cta}
                        </div>  
         break
+        case('linkTo'):
+            template = (
+                <Link to = {props.linkTo} className = "blue-btn d-block">
+                    {props.cta}
+                </Link>
+            )
+        break
         default:
         template = ''
     }
