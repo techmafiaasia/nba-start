@@ -23,7 +23,7 @@ export default function Home() {
                 type = "card"
                 loadMore = {true}
                 title = {true}
-                start = {3}
+                start = {1}
                 amount = {3}
 
             />

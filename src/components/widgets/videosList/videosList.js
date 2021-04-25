@@ -7,20 +7,20 @@ import CardInfo from '../cardInfo/cardInfo'
 
 export default class VideosList extends Component {
     state = {
+        items: [],
         teams: [],
-        videos: [],
         start : this.props.start,
         amount: this.props.amount,
         end: this.props.start + this.props.amount
     }
 
-    componentDidMount(){
+    componentWillMount(){
         this.request(this.state.start, this.state.end)
     }
     
     request = (start, end) =>{
         if(this.state.teams.length <1){
-            axios.get(`${URL}/teams?_start=${start}&_end=${end}`)
+            axios.get(`${URL}/teams`)
             .then(response =>{
                 this.setState({
                     teams: response.data
@@ -30,7 +30,7 @@ export default class VideosList extends Component {
         axios.get(`${URL}/videos?_start=${start}&_end=${end}`)
         .then(response =>{
             this.setState({
-                teams: [...this.state.teams, ...response.data]
+                items: [...this.state.items, ...response.data]
             })
         })
     }
@@ -40,7 +40,6 @@ export default class VideosList extends Component {
         : null
     }
     loadMore = () =>{
-        console.log('loaadmore clicked ')
         let end = this.state.end + this.state.amount
         this.request(this.state.end, end)
     }
@@ -58,7 +57,7 @@ export default class VideosList extends Component {
         let template = ''
         switch(type){
             case 'card':
-                template = this.state.teams.map((item, i) =>{
+                template = this.state.items.map((item, i) =>{
                     return(
                         <Link to = {`/videos/${item.id}`} key = {i}>
                             <div className = "videoListItem-container">
@@ -68,10 +67,10 @@ export default class VideosList extends Component {
                                     backgroundImage: `url(images/videos/${item.image})`
                                 }}
                                 >
-                                    <div ></div>
+                                    <div >sth</div>
                                 </div>
                                 <div className = "right">
-                                    {/* <CardInfo teams = {item.team} date = {item.date} /> */}
+                                    <CardInfo team = {item.team} teams = {this.state.teams} date = {item.date} />
                                     <h2>{item.title}</h2>
                                 </div>
                             </div>
@@ -85,6 +84,8 @@ export default class VideosList extends Component {
         return template
     }
     render() {
+
+        console.log('RENDER')
       
         return (
             <div className = "videos-list-wrapper">
