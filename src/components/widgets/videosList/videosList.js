@@ -4,7 +4,7 @@ import axios from 'axios'
 import {URL} from '../../../config'
 import Button from '../buttons/button'
 import CardInfo from '../cardInfo/cardInfo'
-
+import VideosListTemplate from './videosListTemplate'
 export default class VideosList extends Component {
     state = {
         items: [],
@@ -90,7 +90,8 @@ export default class VideosList extends Component {
         return (
             <div className = "videos-list-wrapper">
                 {this.renderTitle()}
-                {this.renderVideos(this.props.type)}
+                <VideosListTemplate type = "card" items = {this.state.items} teams = {this.state.teams} />
+                {/* {this.renderVideos(this.props.type)} */}
                 {this.renderButton()}
             </div>
         )

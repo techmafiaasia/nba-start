@@ -9,6 +9,7 @@ export default function VideoHeader(props) {
     return (
         <div>
             {teamNfo(props.teamData)}
+          
         </div>
     )
 }
