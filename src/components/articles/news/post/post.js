@@ -34,7 +34,19 @@ export default class Post extends Component {
                     date = {article.date}
                     author= {article.author}
                 />
-                <ArticleBody />
+                <div className = "article-body" >
+                    <h1>{article.title}</h1>
+                    <div
+                        className = "article-image"
+                        style = {{
+                            backgroundImage: `url('/images/articles/${article.image}')`
+                        }}
+                    ></div>
+                    <div className = "article-text"> 
+                        {article.body}
+                    </div>
+
+                </div>
             </div>
         )
     }

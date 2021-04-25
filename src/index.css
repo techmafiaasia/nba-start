@@ -172,3 +172,29 @@ code {
 .article-post-data span{
   font-weight: 500;
 }
+.article-body{
+  background-color: #fff;
+  margin: 0 5px;
+  border: 1px solid #c5c5c5;
+  padding: 10px;
+}
+.article-body h1{
+  font-size: 25px;
+  font-weight: 400;
+  color: #4d4d4d;
+  margin: 15px 0;
+}
+.article-image{
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+.article-text{
+  font-weight: 300;
+  font-size: 14px;
+  color: #666;
+  line-height: 23px;
+  margin: 15px 0;
+}
