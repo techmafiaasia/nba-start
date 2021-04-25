@@ -23,7 +23,8 @@ export default class Post extends Component {
         })
     }
     render() {
-        console.log('state',this.state.articles)
+        console.log('state',this.state.article)
+        console.log('teams', this.state.team)
         const article = this.state.article
         const team = this.state.team
         return (
