@@ -16,32 +16,38 @@ export default class Video extends Component {
         .then(response =>{
             console.log('response', response.data)
             let article = response.data[0]
+            console.log('article', article)
             axios.get(`${URL}/teams?id=${article.team}`)
             .then(response =>{
                 this.setState({
                     article,
                     team:response.data
                 })
+                console.log('team', this.state.team)
                 this.getRelated()
             })
         })
     }
 
     getRelated = () =>{
+        console.log('state', this.state)
         axios.get(`${URL}/teams`)
         .then(response =>{
             let teams = response.data
-            axios.get(`${URL}/videos?q=${this.state.team[0].city}&_limit=3`)
+            console.log(this.state.team[0].city, 'team')
+            axios.get(`${URL}/videos?q=Portland&_limit=3`)
             .then(response =>{
+                console.log('search response', response.data)
                 this.setState({
-                    teams,
                     related: response.data
                 })
             })
         })
+       
     }
     render() {
-        console.log('video', this.state)
+        //console.log('video', this.state)
+        console.log(this.state.related)
         return (
             <div>
                 <VideoHeader
